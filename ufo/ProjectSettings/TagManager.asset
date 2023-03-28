@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
-  - 
-  - 
+  - pickup
+  - background
   - 
   - 
   - 
@@ -41,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 1
+  - name: player
     uniqueID: 32797429
     locked: 0
-  - name: 2
+  - name: pickup
     uniqueID: 2877918497
     locked: 0
-  - name: 3
+  - name: background
     uniqueID: 4061389179
     locked: 0
