@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] dzwiek;
-    public Sound[] dzwiek1;
-    
+    public Sound[] music;
+    public Sound[] sfx;
+    public AudioSource musicSource;
+    public AudioSource sfxSource;
+        
     // Start is called before the first frame update
     void Start()
     {
