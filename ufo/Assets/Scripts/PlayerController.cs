@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         score = 0;
+       AudioManager.instance.PlayMusic("Podk³ad");
     }
 
     // Update is called once per frame
@@ -27,15 +28,25 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        if (movement.x > 0 || movement.x <0 || movement.y > 0 || movement.y <0)
+        {
+            AudioManager.instance.PlaySFX("Latanie");
+        }
         Rigidbody2D.AddForce(movement * speed);
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Pickup"))
         {
+            AudioManager.instance.PlaySFX("Pickup");
             Destroy(collision.gameObject);
             score++;
             ScoreUpdate(score);
+        }
+        if (collision.gameObject.CompareTag("Background"))
+        {
+            AudioManager.instance.PlaySFX("Uderzenie");
         }
     }
     void ScoreUpdate(int score)
